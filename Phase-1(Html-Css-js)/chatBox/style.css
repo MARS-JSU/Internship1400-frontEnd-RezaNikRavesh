@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+button {
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #081B33;
+}
+.chat-box {
+  border-radius: 10px;
+  width: 500px;
+  min-width: 390px;
+  height: 600px;
+  background: #506680;
+  padding: 25px;
+  margin: 20px auto;
+  box-shadow: 0 3px #ccc;
+}
+.chat-logs {
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  height: 450px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: #352c51;
+}
+.chat-logs::-webkit-scrollbar {
+  width: 10px;
+}
+.chat-logs::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.chat {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.chat .user-photo {
+  width: 60px;
+  height: 60px;
+  background: #ccc;
+  border-radius: 50px;
+}
+.chat .chat-message {
+  white-space: normal;
+  word-wrap: break-word;
+  width: 80%;
+  padding: 15px;
+  margin: 5px 10px 0px;
+  background: #1ddced;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 18px;
+}
+.friend .chat-message {
+  background: #506680;
+}
+.self .chat-message {
+  background: #169aa7;
+  order: -1;
+}
+.chat-form {
+  display: flex;
+  margin-top: 20px;
+  align-items: flex-start;
+}
+.chat-form button {
+  background: #352c51;
+  padding: 5px 15px;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  align-self: center;
+  margin-left: 10px;
+  border-radius: 30px;
+  box-shadow: 0px 3px #352c51b0;
+  cursor: pointer;
+}
+.chat-form button:hover {
+  background: #13c8d9;
+}
+.chat-form textarea {
+  background: #31245783;
+  width: 75%;
+  height: 50px;
+  border: 2px solid #655a88;
+  border-radius: 5px;
+  resize: none;
+  padding: 10px;
+  font-size: 18px;
+  color: white;
+}
+.chat-form textarea:focus {
+  background: #352c51;
+}
+textarea::-webkit-scrollbar {
+  width: 10px;
+}
+textarea::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+img {
+  width: 100%;
+  border-radius: 50px;
+  width: inherit;
+}
