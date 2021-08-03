@@ -113,7 +113,6 @@ hr {
 .aboutMe {
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
   align-items: center;
 }
 .aboutMe .title {
