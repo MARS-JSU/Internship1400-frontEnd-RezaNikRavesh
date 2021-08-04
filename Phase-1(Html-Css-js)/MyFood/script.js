@@ -13,10 +13,11 @@ for (const li of liTags) {
         document.querySelector(".sidebar").classList.toggle("active");
         break;
       case "Food":
-        alert(e.target.outerText);
+        document.querySelector(".sidebar").classList.toggle("active");
         break;
       case "About":
-        alert(e.target.outerText);
+        document.querySelector(".sidebar").classList.toggle("active");
+
         break;
     }
   });

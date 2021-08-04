@@ -16,19 +16,19 @@ h6 {
 .header {
   display: flex;
   width: 100%;
-  height: 80px;
+  height: 100px;
   justify-content: center;
 }
 .header .header-container {
+  display: flex;
   padding: 0 10px;
   height: 80px;
   position: fixed;
   background-color: white;
   align-items: center;
-  display: flex;
-  width: 80%;
+  width: 100%;
   z-index: 1;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .mail {
   font-size: x-large;
