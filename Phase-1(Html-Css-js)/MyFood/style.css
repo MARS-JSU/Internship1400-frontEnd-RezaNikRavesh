@@ -56,6 +56,8 @@ h6 {
 }
 .post {
   width: 300px;
+  margin-bottom: 5px;
+  padding: 0 5px;
 }
 .post-image {
   padding: 5px;
@@ -65,12 +67,11 @@ h6 {
 }
 .post-title {
   font-size: 23px;
-  font-weight: bold;
   text-align: center;
   padding: 2px;
 }
 .post-text {
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   padding: 4px;
 }
