@@ -205,6 +205,9 @@ hr {
   padding: 15px;
   align-items: center;
 }
+.blog-posts li.first {
+  border-bottom: 1px solid #cdcdcd;
+}
 .blog-posts li:hover {
   background-color: #cdcdcd;
 }
