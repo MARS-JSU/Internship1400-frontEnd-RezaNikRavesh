@@ -1,11 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap");
 * {
-  font-family: "Fira Sans Condensed", sans-serif;
+  /* font-family: "Fira Sans Condensed", sans-serif; */
+  font-family: "karma", sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
+body , h1 , h2 ,h3 ,h4 ,h5,h6,{
+  font-family: "karma", sans-serif;
+  
+}
 .header {
   /* position: fixed; */
   display: flex;
@@ -118,10 +122,10 @@ hr {
 .aboutMe .title {
   margin: 0px 0px 50px 0px;
 }
-.aboutMe .img{
+.aboutMe .img {
   width: 50%;
 }
-.aboutMe img{
+.aboutMe img {
   width: 100%;
 }
 .aboutMe h4 {
