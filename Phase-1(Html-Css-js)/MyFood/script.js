@@ -13,9 +13,19 @@ for (const li of liTags) {
         document.querySelector(".sidebar").classList.toggle("active");
         break;
       case "Food":
+        document.querySelector(".post").scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+        });
         document.querySelector(".sidebar").classList.toggle("active");
         break;
       case "About":
+        document.querySelector(".aboutMe").scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+        });
         document.querySelector(".sidebar").classList.toggle("active");
 
         break;
