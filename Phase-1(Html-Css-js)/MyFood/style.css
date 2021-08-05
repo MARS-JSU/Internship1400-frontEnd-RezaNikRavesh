@@ -53,6 +53,8 @@ h6 {
   background: #bfbfbf;
 }
 .sidebar {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   background-color: white;
   width: 40%;
@@ -63,6 +65,9 @@ h6 {
   transition: all 0.5s;
 }
 .sidebar li {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  margin-left: 5px;
   width: 100%;
   display: flex;
   cursor: pointer;
@@ -70,7 +75,6 @@ h6 {
   font-size: x-large;
   font-weight: normal;
   text-align: start;
-  padding: 20px;
   justify-content: space-between;
 }
 .sidebar li span {
@@ -343,9 +347,10 @@ hr {
     position: fixed;
     background-color: white;
     width: 100%;
-    height: 30%;
+    height: 200px;
     z-index: 2;
     top: -50%;
+    left: 0%;
     box-shadow: 1px 10px 17px #cdcdcd;
     transition: all 0.5s;
   }
@@ -366,7 +371,6 @@ hr {
     font-size: large;
     font-weight: normal;
     text-align: start;
-    padding: 10px 20px;
   }
   hr {
     margin: 50px 40px;
