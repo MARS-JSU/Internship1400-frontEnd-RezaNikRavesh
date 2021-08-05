@@ -1,6 +1,6 @@
 // toggle menu
 function toggleMenu() {
-  document.querySelector(".sidebar").classList.toggle("active");
+  document.querySelector(".sidebar").classList.toggle("sidebar-active");
 }
 
 let menuButtun = document.querySelector(".header .header-container .img");
@@ -38,8 +38,8 @@ for (const li of liTags) {
         if (document.querySelector("body").classList.value == "dark")
           document.querySelector(".sidebar li span i").classList.value =
             "bx bxs-moon bx-flip-horizontal";
-            else
-            document.querySelector(".sidebar li span i").classList.value =
+        else
+          document.querySelector(".sidebar li span i").classList.value =
             "bx bxs-sun bx-flip-horizontal";
         toggleMenu();
         break;

@@ -29,15 +29,16 @@ h6 {
   align-items: center;
   width: 100%;
   z-index: 1;
+  transition: all 1s;
   justify-content: space-around;
 }
-.mail {
+.header .mail {
   font-size: x-large;
 }
-.title {
+.header .title {
   font-size: x-large;
 }
-.img {
+.header .img {
   height: 100%;
   display: flex;
   justify-content: center;
@@ -45,7 +46,7 @@ h6 {
   width: 50px;
   cursor: pointer;
 }
-.img i {
+.header .img i {
   font-size: 30px;
 }
 .header .header-container .img:hover {
@@ -80,7 +81,7 @@ h6 {
 .sidebar li:hover {
   background-color: #cdcdcd;
 }
-.active {
+.sidebar-active {
   left: 0%;
 }
 .posts-container {
@@ -117,12 +118,12 @@ h6 {
   height: 50px;
   align-items: center;
 }
-.btn {
+.page-selector .btn {
   display: flex;
   width: 30px;
   height: 30px;
 }
-.btn:hover {
+.page-selector .btn:hover {
   background: black;
 }
 a,
@@ -135,9 +136,9 @@ a:active {
 a:focus {
   background: black;
 }
-.arrow a:focus {
-  background-color: white;
-  color: black;
+.page-selector .arrow a:focus {
+  background-color: black;
+  color: white;
 }
 a {
   padding-top: 5px;
@@ -160,6 +161,7 @@ hr {
 }
 .aboutMe .title {
   margin: 0px 0px 50px 0px;
+  font-size: x-large;
 }
 .aboutMe .img {
   width: 50%;
