@@ -140,7 +140,7 @@ a:focus {
   background-color: black;
   color: white;
 }
-a {
+.page-selector a {
   padding-top: 5px;
   text-align: center;
   width: 100%;
