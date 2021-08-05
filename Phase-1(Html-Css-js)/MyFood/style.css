@@ -299,8 +299,7 @@ hr {
 .dark .header .img:hover,
 .dark .page-selector a:focus,
 .dark .page-selector a:hover,
-.dark .footer .blog-posts li:hover,
-.dark .sidebar li:hover {
+.dark .footer .blog-posts li:hover {
   background-color: #0f294e;
 }
 .dark .posts-container .post {
@@ -311,11 +310,14 @@ hr {
   background-image: linear-gradient(#0f294e, #09192f);
   box-shadow: 1px 0px 10px #09192f;
 }
-.dark .popular-tags span.active {
-  background-color: blue;
+.dark .sidebar li:hover {
+  background-color: #13315c;
 }
 .dark .sidebar li span {
   margin-right: 60px;
   color: rgba(232, 217, 62, 0.99);
   font-size: xx-large;
+}
+.dark .popular-tags span.active {
+  background-color: blue;
 }
