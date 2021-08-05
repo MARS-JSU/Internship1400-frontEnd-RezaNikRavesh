@@ -67,7 +67,7 @@ h6 {
 .sidebar li {
   margin-top: 5px;
   margin-bottom: 20px;
-  margin-left: 5px;
+  padding-left: 5px;
   width: 100%;
   display: flex;
   cursor: pointer;
