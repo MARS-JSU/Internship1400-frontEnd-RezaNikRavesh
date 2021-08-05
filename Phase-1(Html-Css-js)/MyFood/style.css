@@ -368,4 +368,15 @@ hr {
     text-align: start;
     padding: 10px 20px;
   }
+  hr {
+    margin: 50px 40px;
+    color: #eeeeee;
+    opacity: 50%;
+  }
+  .aboutMe-hr {
+    margin: 100px 40px;
+    color: #eeeeee;
+    opacity: 50%;
+    z-index: 0;
+  }
 }
