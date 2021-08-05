@@ -12,6 +12,7 @@ h4,
 h5,
 h6 {
   font-family: "karma", sans-serif;
+  transition: all 1s;
 }
 .header {
   display: flex;
@@ -58,15 +59,23 @@ h6 {
   z-index: 2;
   left: -40%;
   box-shadow: 1px 0px 10px #cdcdcd;
-  transition: all 0.25s;
+  transition: all 0.5s;
 }
 .sidebar li {
+  width: 100%;
+  display: flex;
   cursor: pointer;
   color: black;
   font-size: x-large;
   font-weight: normal;
   text-align: start;
   padding: 20px;
+  justify-content: space-between;
+}
+.sidebar li span {
+  margin-right: 60px;
+  color: rgba(232, 217, 62, 0.99);
+  font-size: xx-large;
 }
 .sidebar li:hover {
   background-color: #cdcdcd;
@@ -254,4 +263,57 @@ hr {
 .popular-tags p {
   padding: 0px 10px;
   line-height: 30px;
+}
+
+/* darkMode */
+
+.dark {
+  background-color: #0a192f;
+  /* background-image: linear-gradient(#0f294e, #09192f); */
+
+  transition: all 1s;
+}
+.dark .header-container {
+  background-color: #09192f;
+  transition: all 1s;
+}
+.dark .header-container .mail,
+.dark .header-container i,
+.dark .header-container .title,
+.dark .posts-container .post-title,
+.dark .posts-container .post-text,
+.dark .page-selector a,
+.dark .page-selector i,
+.dark .aboutMe,
+.dark .footer,
+.dark .footer a,
+.dark .sidebar li {
+  color: rgba(255, 255, 255, 0.99);
+  color: white;
+}
+.dark .posts-container .post-text {
+  color: #cdcdcd;
+}
+.dark .header .img:hover,
+.dark .page-selector a:focus,
+.dark .page-selector a:hover,
+.dark .footer .blog-posts li:hover,
+.dark .sidebar li:hover {
+  background-color: #0f294e;
+}
+.dark .posts-container .post {
+  background-color: #172a46;
+}
+.dark .sidebar {
+  /* background-color: #09192f; */
+  background-image: linear-gradient(#0f294e, #09192f);
+  box-shadow: 1px 0px 10px #09192f;
+}
+.dark .popular-tags span.active {
+  background-color: blue;
+}
+.dark .sidebar li span {
+  margin-right: 60px;
+  color: rgba(232, 217, 62, 0.99);
+  font-size: xx-large;
 }

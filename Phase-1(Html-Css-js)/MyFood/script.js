@@ -1,7 +1,11 @@
 // toggle menu
+function toggleMenu() {
+  document.querySelector(".sidebar").classList.toggle("active");
+}
+
 let menuButtun = document.querySelector(".header .header-container .img");
 menuButtun.addEventListener("click", () => {
-  document.querySelector(".sidebar").classList.toggle("active");
+  toggleMenu();
 });
 
 // sidemenu item handle
@@ -10,7 +14,7 @@ for (const li of liTags) {
   li.addEventListener("click", (e) => {
     switch (e.target.outerText) {
       case "Close Menu":
-        document.querySelector(".sidebar").classList.toggle("active");
+        toggleMenu();
         break;
       case "Food":
         document.querySelector(".post").scrollIntoView({
@@ -18,7 +22,7 @@ for (const li of liTags) {
           block: "start",
           inline: "nearest",
         });
-        document.querySelector(".sidebar").classList.toggle("active");
+        toggleMenu();
         break;
       case "About":
         document.querySelector(".aboutMe").scrollIntoView({
@@ -26,8 +30,18 @@ for (const li of liTags) {
           block: "start",
           inline: "nearest",
         });
-        document.querySelector(".sidebar").classList.toggle("active");
+        toggleMenu();
+        break;
 
+      case "Dark Mode":
+        document.querySelector("body").classList.toggle("dark");
+        if (document.querySelector("body").classList.value == "dark")
+          document.querySelector(".sidebar li span i").classList.value =
+            "bx bxs-moon bx-flip-horizontal";
+            else
+            document.querySelector(".sidebar li span i").classList.value =
+            "bx bxs-sun bx-flip-horizontal";
+        toggleMenu();
         break;
     }
   });
