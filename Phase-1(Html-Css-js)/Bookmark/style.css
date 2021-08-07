@@ -1,0 +1,29 @@
+:root {
+  --boxBackground: #eeeeee;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Karma", serif;
+}
+.container {
+  width: fit-content;
+  border: 2px solid red;
+  width: 50%;
+  margin: auto;
+  margin-top: 40px;
+}
+.header {
+}
+.header h3 {
+  margin: 20px;
+  font-size: x-large;
+  font-weight: 300;
+  color: #919177;
+  border-bottom: 2px solid #e5e5e5;
+  /* text-align: start; */
+}
