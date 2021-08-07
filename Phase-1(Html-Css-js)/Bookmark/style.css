@@ -1,7 +1,6 @@
 :root {
   --boxBackground: #eeeeee;
 }
-
 * {
   margin: 0px;
   padding: 0px;
@@ -10,20 +9,96 @@
 body {
   font-family: "Karma", serif;
 }
-.container {
-  width: fit-content;
-  border: 2px solid red;
-  width: 50%;
-  margin: auto;
-  margin-top: 40px;
-}
 .header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
-.header h3 {
-  margin: 20px;
+.header .title {
+  font-size: x-large;
+  font-weight: 300;
+  width: 50%;
+}
+.header .title h3 {
+  width: 100%;
+  padding: 20px 0px;
   font-size: x-large;
   font-weight: 300;
   color: #919177;
-  border-bottom: 2px solid #e5e5e5;
-  /* text-align: start; */
+  border-bottom: 2px solid #eeeeee;
+  /* border: 2px solid #0184ff; */
+}
+.form {
+  padding-top: 70px;
+  padding-bottom: 50px;
+  width: 50%;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: var(--boxBackground);
+  align-items: center;
+  border-radius: 10px;
+}
+.form .title {
+  width: 50%;
+  text-align: center;
+}
+.form .myForm {
+  padding-top: 20px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form .myForm span {
+  text-align: center;
+  font-size: medium;
+  font-weight: bolder;
+  margin: 10px 0px;
+}
+.form .myForm .input {
+  width: 70%;
+}
+.form .myForm .input input {
+  width: 100%;
+  height: 30px;
+  border: 0px solid #eeeeee;
+  border-radius: 5px;
+  padding: 10px;
+}
+.form .myForm .button {
+  width: 70px;
+  height: 45px;
+}
+.form .myForm .button input {
+  margin-top: 25px;
+  color: white;
+  width: 100%;
+  height: 100%;
+  background-color: #337ab7;
+  border-width: 0;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px #337ab7;
+}
+.form .myForm .button input:hover {
+  color: white;
+  background-color: #225d91;
+}
+.footer {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer .developer {
+  width: 50%;
+}
+.footer .developer p {
+  width: 100%;
+  border-width: 2px;
+  border-top: 2px solid #eeeeee;
+  color: #979797;
+  padding-top: 20px;
 }

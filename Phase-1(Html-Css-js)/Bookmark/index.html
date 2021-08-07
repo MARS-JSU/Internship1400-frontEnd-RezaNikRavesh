@@ -13,24 +13,28 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
-      <div class="header">
-        <h3>Bookmarker</h3>
+    <div class="header">
+      <div class="title"><h3>Bookmarker</h3></div>
+    </div>
+    <div class="form">
+      <div class="title">
+        <h2>Bookmark Your Favorite Sites</h2>
       </div>
-      <div class="form">
-        <div class="title">
-          <h2>Bookmark Your Favorite Sites</h2>
+      <form class="myForm">
+        <span>Site name</span>
+        <div class="input">
+          <input placeholder="Website Name" class="siteName" type="text" />
         </div>
-        <form action="">
-          <span>Site name</span>
-          <input class="siteName" type="text" />
-          <span>Site Url</span>
-          <input class="siteUrl" type="text" />
-          <input class="submit" type="submit" />
-        </form>
-        <div class="list">
-          <div class="item"></div>
+        <span>Site Url</span>
+        <div class="input">
+          <input placeholder="Website Url" class="siteUrl" type="text" />
         </div>
+        <div class="button"><input type="submit" /></div>
+      </form>
+    </div>
+    <div class="footer">
+      <div class="developer">
+        <p>© 2020 Bookmarker, Inc. Rezankv</p>
       </div>
     </div>
   </body>
