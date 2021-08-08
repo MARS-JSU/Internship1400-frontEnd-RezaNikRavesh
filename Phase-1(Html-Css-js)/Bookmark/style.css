@@ -102,3 +102,51 @@ body {
   color: #979797;
   padding-top: 20px;
 }
+.bookmark-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.bookmark-container .bookMark {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 0px;
+  width: 50%;
+  height: 80px;
+  border-radius: 6px;
+  border: 2px solid #d1d1d1;
+  background-color: #eeeeee;
+}
+.bookmark-container .bookMark .title {
+  margin: 0px 10px;
+}
+.bookmark-container .bookMark .btn-visit button {
+  margin: 0px 10px;
+  background-color: white;
+  border: 2px solid #d1d1d1;
+  width: 70px;
+  height: 40px;
+  border-radius: 5px;
+  color: #525252;
+}
+.bookmark-container .bookMark .btn-visit button:hover{
+  background-color: rgb(216, 216, 216);
+
+}
+.bookmark-container .bookMark .btn-remove button {
+  margin: 0px 10px;
+  background-color: #D9534F;
+  border: 2px solid #d1d1d1;
+  width: 70px;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+}
+.bookmark-container .bookMark .btn-remove button:hover{
+    background-color: #da2019;
+  
+  }
+  
