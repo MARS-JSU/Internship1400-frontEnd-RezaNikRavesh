@@ -7,6 +7,7 @@ toggle.addEventListener("click", () => {
 });
 
 function createBookMark(siteName, siteUrl) {
+  let tag = Math.random();
   //bookMark
   let bookMark = document.createElement("div");
   bookMark.className = "bookMark";
@@ -78,24 +79,4 @@ function submitHandler(e) {
     inputName.value = "";
     inputUrl.value = "";
   }
-}
-
-let buttons = document.querySelectorAll(".btn");
-
-for (const btn of buttons) {
-  btn.addEventListener("click", (e) => {
-    switch (e.target.innerHTML) {
-      case "Visit":
-        console.log(bookMarks);
-        break;
-      case "Delete":
-        break;
-      case "":
-        submitHandler(e);
-        break;
-
-      default:
-        break;
-    }
-  });
 }

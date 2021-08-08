@@ -7,6 +7,7 @@
   box-sizing: border-box;
 }
 body {
+  background-color: #212121;
   font-family: "Karma", serif;
 }
 .header {
@@ -24,8 +25,8 @@ body {
   padding: 20px 0px;
   font-size: x-large;
   font-weight: 300;
-  color: #919177;
-  border-bottom: 2px solid #eeeeee;
+  color: #feda7a;
+  border-bottom: 2px solid #feda7a;
 }
 .form {
   padding-top: 70px;
@@ -35,7 +36,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  background-color: var(--boxBackground);
+  background-color: #ffd600;
   align-items: center;
   border-radius: 10px;
 }
@@ -76,14 +77,14 @@ body {
   color: white;
   width: 100%;
   height: 100%;
-  background-color: #337ab7;
+  background-color: #40241a;
   border-width: 0;
   border-radius: 5px;
-  box-shadow: 2px 2px 2px 1px #337ab7;
+  box-shadow: 2px 2px 2px 1px #9c786c;
 }
 .form .myForm .button input:hover {
   color: white;
-  background-color: #225d91;
+  background-color: #9c786c;
 }
 .toggle-container {
   width: 50%;
@@ -93,7 +94,7 @@ body {
 }
 .toggle-container .toggle i {
   font-size: xx-large;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 .toggle-container .toggle i:hover {
   opacity: 1;
@@ -124,8 +125,8 @@ body {
   width: 50%;
   height: 80px;
   border-radius: 6px;
-  border: 2px solid #d1d1d1;
-  background-color: #eeeeee;
+  border: 2px solid #c7a500;
+  background-image: linear-gradient(#c7a500, #c7a500);
 }
 .bookmark-container .bookMark .title {
   margin: 0px 10px;
@@ -133,21 +134,21 @@ body {
 .bookmark-container .bookMark .btn-visit button {
   cursor: pointer;
   margin: 0px 10px;
-  background-color: white;
-  border: 2px solid #d1d1d1;
+  background-color: rgb(216, 216, 216);
+  border: 2px solid #c0a003;
   width: 70px;
   height: 40px;
   border-radius: 5px;
   color: #525252;
 }
 .bookmark-container .bookMark .btn-visit button:hover {
-  background-color: rgb(216, 216, 216);
+  background-color: white;
 }
 .bookmark-container .bookMark .btn-remove button {
   cursor: pointer;
   margin: 0px 10px;
   background-color: #d9534f;
-  border: 2px solid #d1d1d1;
+  border: 2px solid #c0a003;
   width: 70px;
   height: 40px;
   border-radius: 5px;
@@ -169,7 +170,7 @@ body {
 .footer .developer p {
   width: 100%;
   border-width: 2px;
-  border-top: 2px solid #eeeeee;
-  color: #979797;
+  border-top: 2px solid #feda7a;
+  color: #a89766;
   padding-top: 20px;
 }
