@@ -71,6 +71,7 @@ body {
   height: 45px;
 }
 .form .myForm .button input {
+  cursor: pointer;
   margin-top: 25px;
   color: white;
   width: 100%;
@@ -86,7 +87,6 @@ body {
 }
 .toggle-container {
   width: 50%;
-  border: 2px solid red;
   display: flex;
   justify-content: center;
   margin: 0px auto;
@@ -99,10 +99,10 @@ body {
   opacity: 1;
 }
 .toggle-container .toggle {
-  transition: all 0.6s;
+  transition: all 0.4s;
 }
 .toggle-container .hide {
-  transition: all 0.6s;
+  transition: all 0.4s;
   transform: rotate(180deg);
 }
 .bookmark-container {
@@ -112,7 +112,7 @@ body {
   align-items: center;
   width: 100%;
 }
-.close{
+.close {
   display: none;
 }
 
@@ -131,6 +131,7 @@ body {
   margin: 0px 10px;
 }
 .bookmark-container .bookMark .btn-visit button {
+  cursor: pointer;
   margin: 0px 10px;
   background-color: white;
   border: 2px solid #d1d1d1;
@@ -143,6 +144,7 @@ body {
   background-color: rgb(216, 216, 216);
 }
 .bookmark-container .bookMark .btn-remove button {
+  cursor: pointer;
   margin: 0px 10px;
   background-color: #d9534f;
   border: 2px solid #d1d1d1;
