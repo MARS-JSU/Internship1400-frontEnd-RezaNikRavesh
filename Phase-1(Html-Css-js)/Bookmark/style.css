@@ -135,7 +135,7 @@ body {
   cursor: pointer;
   margin: 0px 10px;
   background-color: rgb(216, 216, 216);
-  border: 2px solid #c0a003;
+  border: 2px solid white;
   width: 70px;
   height: 40px;
   border-radius: 5px;
@@ -148,7 +148,7 @@ body {
   cursor: pointer;
   margin: 0px 10px;
   background-color: #d9534f;
-  border: 2px solid #c0a003;
+  border: 2px solid #b4403c;
   width: 70px;
   height: 40px;
   border-radius: 5px;
