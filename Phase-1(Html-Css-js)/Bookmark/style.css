@@ -109,6 +109,23 @@ body {
   align-items: center;
   width: 100%;
 }
+.bookmark-container .toggle {
+  transition: all 0.5s;
+}
+.bookmark-container .toggle i {
+  font-size: xx-large;
+  opacity: 0.5;
+  transition: all 1.5;
+}
+.bookmark-container .toggle i:hover {
+  opacity: 1;
+}
+.bookmark-container .show {
+}
+.bookmark-container .hide {
+  transform: rotate(180deg);
+}
+
 .bookmark-container .bookMark {
   display: flex;
   align-items: center;
@@ -132,21 +149,18 @@ body {
   border-radius: 5px;
   color: #525252;
 }
-.bookmark-container .bookMark .btn-visit button:hover{
+.bookmark-container .bookMark .btn-visit button:hover {
   background-color: rgb(216, 216, 216);
-
 }
 .bookmark-container .bookMark .btn-remove button {
   margin: 0px 10px;
-  background-color: #D9534F;
+  background-color: #d9534f;
   border: 2px solid #d1d1d1;
   width: 70px;
   height: 40px;
   border-radius: 5px;
   color: white;
 }
-.bookmark-container .bookMark .btn-remove button:hover{
-    background-color: #da2019;
-  
-  }
-  
+.bookmark-container .bookMark .btn-remove button:hover {
+  background-color: #da2019;
+}
