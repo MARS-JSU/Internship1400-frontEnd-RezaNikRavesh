@@ -50,13 +50,32 @@ function createBookMark(siteName, siteUrl) {
     url: siteUrl,
   });
 }
+function isValid(siteName, siteUrl) {
+  if (siteName.trim() == "" || siteUrl.trim() == "")
+    return alert("Please fill out the fields");
 
+  if (!siteUrl.includes("https://www."))
+    return alert("Please enter a valid url ( https://www. )");
+
+  for (const bookMark of bookMarks) {
+    if (siteName == bookMark.name || siteUrl == bookMark.url)
+      return alert("this name or url is already exist");
+  }
+
+  return true;
+}
 function submitHandler(e) {
   e.preventDefault();
   let inputName = document.querySelector(".form .myForm input.siteName");
-  let inputUrl = document.querySelector(".form form input.siteUrl");
-  createBookMark(inputName.value, inputUrl.value);
+  let inputUrl = document.querySelector(".form .myForm input.siteUrl");
+
+  if (isValid(inputName.value, inputUrl.value)) {
+    createBookMark(inputName.value, inputUrl.value);
+    inputName.value = "";
+    inputUrl.value = "";
+  }
 }
+
 let buttons = document.querySelectorAll(".btn");
 
 for (const btn of buttons) {
