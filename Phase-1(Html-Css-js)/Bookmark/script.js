@@ -54,8 +54,12 @@ function isValid(siteName, siteUrl) {
   if (siteName.trim() == "" || siteUrl.trim() == "")
     return alert("Please fill out the fields");
 
-  if (!siteUrl.includes("https://www."))
-    return alert("Please enter a valid url ( https://www. )");
+  if (
+    !siteUrl.includes("https://") ||
+    !siteUrl.includes(".") ||
+    siteUrl[8] == "."
+  )
+    return alert("Please enter a valid url ( https:// )");
 
   for (const bookMark of bookMarks) {
     if (siteName == bookMark.name || siteUrl == bookMark.url)
