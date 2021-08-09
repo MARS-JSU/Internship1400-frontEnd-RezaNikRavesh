@@ -58,7 +58,7 @@ body {
   margin: 10px 0px;
 }
 .form .myForm .input {
-  width: 70%;
+  width: 90%;
 }
 .form .myForm .input input {
   width: 100%;
@@ -116,7 +116,6 @@ body {
 .close {
   display: none;
 }
-
 .bookmark-container .bookMark {
   display: flex;
   align-items: center;
@@ -129,6 +128,8 @@ body {
   background-image: linear-gradient(#c7a500, #c7a500);
 }
 .bookmark-container .bookMark .title {
+  overflow: hidden;
+
   margin: 0px 10px;
 }
 .bookmark-container .bookMark .btn-visit button {
@@ -173,4 +174,27 @@ body {
   border-top: 2px solid #feda7a;
   color: #a89766;
   padding-top: 20px;
+}
+@media screen and (max-width: 450px) {
+  .form .title h2 {
+    font-size: large;
+  }
+  .form .myForm .input {
+    width: 100%;
+  
+  }
+  .bookmark-container .bookMark{
+    overflow: auto;
+  }
+  .bookmark-container .bookMark .btn-visit button {
+    width: fit-content;
+    height: 40px;
+  }
+  .bookmark-container .bookMark .btn-remove button {
+    width: fit-content;
+    height: 40px;
+  }
+  .bookmark-container .bookMark .title {
+    overflow: hidden;
+  }
 }

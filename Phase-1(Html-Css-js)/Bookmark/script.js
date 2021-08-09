@@ -1,13 +1,16 @@
-let bookMarks = [];
+document.body.onload = loadBookMarks;
 let toggle = document.querySelector(".toggle");
 let container = document.querySelector(".bookmark-container");
+let form = document
+  .querySelector("form")
+  .addEventListener("submit", addBookMark);
+
 toggle.addEventListener("click", () => {
   toggle.classList.toggle("hide");
   container.classList.toggle("close");
 });
 
-function createBookMark(siteName, siteUrl) {
-  let tag = Math.random();
+function createElement(siteName, siteUrl) {
   //bookMark
   let bookMark = document.createElement("div");
   bookMark.className = "bookMark";
@@ -25,6 +28,10 @@ function createBookMark(siteName, siteUrl) {
   let visit = document.createElement("button");
   visit.className = "btn";
   visit.innerHTML = "Visit";
+  visit.addEventListener("click", () => {
+    window.open(siteUrl, "_blank");
+    window.open(siteUrl);
+  });
 
   //remove Button
   let remove_container = document.createElement("div");
@@ -32,6 +39,9 @@ function createBookMark(siteName, siteUrl) {
   let remove = document.createElement("button");
   remove.className = "btn";
   remove.innerHTML = "Delete";
+  remove.addEventListener("click", () => {
+    deleteBookmark(siteUrl);
+  });
 
   //apend to elements
   title_container.appendChild(title);
@@ -45,38 +55,44 @@ function createBookMark(siteName, siteUrl) {
 
   //apend bookMark to container
   container.appendChild(bookMark);
-
-  bookMarks.push({
+}
+function addBookMark(e) {
+  let siteName = document.querySelector(".siteName").value;
+  let siteUrl = document.querySelector(".siteUrl").value;
+  let bookMark = {
     name: siteName,
     url: siteUrl,
-  });
-}
-function isValid(siteName, siteUrl) {
-  if (siteName.trim() == "" || siteUrl.trim() == "")
-    return alert("Please fill out the fields");
+  };
 
-  if (
-    !siteUrl.includes("https://") ||
-    !siteUrl.includes(".") ||
-    siteUrl[8] == "."
-  )
-    return alert("Please enter a valid url ( https:// )");
-
-  for (const bookMark of bookMarks) {
-    if (siteName == bookMark.name || siteUrl == bookMark.url)
-      return alert("this name or url is already exist");
+  if (localStorage.getItem("bookMarks") === null) {
+    let bookMarks = [];
+    bookMarks.push(bookMark);
+    localStorage.setItem("bookMarks", JSON.stringify(bookMarks));
+    createElement(bookMark.name, bookMark.url);
+  } else {
+    let bookMarks = JSON.parse(localStorage.getItem("bookMarks"));
+    bookMarks.push(bookMark);
+    localStorage.setItem("bookMarks", JSON.stringify(bookMarks));
+    createElement(bookMark.name, bookMark.url);
   }
-
-  return true;
-}
-function submitHandler(e) {
+  document.querySelector("form").reset();
   e.preventDefault();
-  let inputName = document.querySelector(".form .myForm input.siteName");
-  let inputUrl = document.querySelector(".form .myForm input.siteUrl");
+}
+function loadBookMarks() {
+  container.innerHTML = "";
+  let bookMarks = JSON.parse(localStorage.getItem("bookMarks"));
 
-  if (isValid(inputName.value, inputUrl.value)) {
-    createBookMark(inputName.value, inputUrl.value);
-    inputName.value = "";
-    inputUrl.value = "";
+  for (let index = 0; index < bookMarks.length; index++) {
+    createElement(bookMarks[index].name, bookMarks[index].url);
   }
+}
+function deleteBookmark(url) {
+  //get bookmarks
+  let bookMarks = JSON.parse(localStorage.getItem("bookMarks"));
+
+  for (let index = 0; index < bookMarks.length; index++) {
+    if (bookMarks[index].url == url) bookMarks.splice(index, 1);
+  }
+  localStorage.setItem("bookMarks", JSON.stringify(bookMarks));
+  loadBookMarks();
 }
