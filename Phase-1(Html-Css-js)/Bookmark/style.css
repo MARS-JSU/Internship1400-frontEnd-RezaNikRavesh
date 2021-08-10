@@ -176,8 +176,6 @@ body {
   padding-top: 20px;
 }
 @media screen and (max-width: 450px) {
-  
-  
   .header .title {
     width: 80%;
   }
@@ -189,6 +187,10 @@ body {
   }
   .form .myForm .input {
     width: 100%;
+  }
+  .form .myForm .button input:hover {
+    color: white;
+    background-color: #40241a;
   }
   .bookmark-container .bookMark {
     overflow: auto;
