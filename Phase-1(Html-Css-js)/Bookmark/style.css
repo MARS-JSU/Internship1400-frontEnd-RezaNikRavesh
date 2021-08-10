@@ -1,3 +1,7 @@
+@font-face {
+  font-family: BYekan;
+  src: url(fonts/BYekan+.ttf);
+}
 :root {
   --boxBackground: #eeeeee;
 }
@@ -9,6 +13,59 @@
 body {
   background-color: #212121;
   font-family: "Karma", serif;
+}
+
+.modal {
+  font-family: BYekan;
+  z-index: 1;
+  display: none;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 100%;
+  height: 100%;
+}
+.modal .content {
+  animation-name: openModal;
+  animation-duration: 0.7s;
+  width: 50%;
+  margin: 20% auto;
+  border: 5px solid #b86b38;
+  border-radius: 7px;
+}
+.modal .content .title {
+  background-color: rgb(219, 171, 11);
+  width: 100%;
+}
+.modal .content .title h2 {
+  text-align: center;
+  color: #40241a;
+}
+.modal .content .text {
+  padding: 20px;
+  background-color: #40241a;
+}
+.modal .content .text p {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+.modal .content .btn-close {
+  width: 100%;
+  text-align: center;
+  background-color: #40241a;
+}
+.modal .content .btn-close button {
+  width: 60px;
+  height: 30px;
+  border: 2px solid rgb(219, 171, 11);
+  border-radius: 3px;
+  background-color: rgb(219, 171, 11);
+  margin-bottom: 10px;
+  font-size:medium;
+  font-weight: bold;
+}
+.modal .content .btn-close button:hover{
+  background-color:rgb(255, 210, 61);
 }
 .header {
   display: flex;
@@ -176,6 +233,15 @@ body {
   padding-top: 20px;
 }
 @media screen and (max-width: 450px) {
+  .modal .content {
+    margin: 20% auto;
+    
+  }
+  .modal .content .btn-close button:hover{
+    background-color: rgb(219, 171, 11);
+  }
+
+
   .header .title {
     width: 80%;
   }
@@ -209,5 +275,14 @@ body {
   }
   .footer .developer {
     width: 80%;
+  }
+}
+
+@keyframes openModal {
+  from {
+    margin: -100 auto;
+  }
+  to {
+    margin: 20% auto;
   }
 }

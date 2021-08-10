@@ -2,14 +2,23 @@ document.body.onload = loadBookMarks;
 let toggle = document.querySelector(".toggle");
 let container = document.querySelector(".bookmark-container");
 let form = document.querySelector("form");
+let modal = document.querySelector(".modal");
+let modalBtn = document.querySelector(".modal .content .btn-close button");
 
 form.addEventListener("submit", addBookMark);
+modalBtn.addEventListener("click", closeModal);
+toggle.addEventListener("click", closeToggle);
 
-toggle.addEventListener("click", () => {
+function closeModal() {
+  modal.style.display = "none";
+}
+function closeToggle() {
   toggle.classList.toggle("hide");
   container.classList.toggle("close");
-});
-
+}
+function openModal() {
+  modal.style.display = "block";
+}
 function createElement(siteName, siteUrl) {
   //bookMark
   let bookMark = document.createElement("div");
@@ -90,6 +99,7 @@ function addBookMark(e) {
   e.preventDefault();
 }
 function loadBookMarks() {
+  if (localStorage.getItem("bookMarks") === null) openModal();
   container.innerHTML = "";
   let bookMarks = JSON.parse(localStorage.getItem("bookMarks"));
 
