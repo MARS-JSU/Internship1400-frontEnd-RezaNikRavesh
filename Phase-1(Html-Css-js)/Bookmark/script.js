@@ -1,9 +1,9 @@
 document.body.onload = loadBookMarks;
 let toggle = document.querySelector(".toggle");
 let container = document.querySelector(".bookmark-container");
-let form = document
-  .querySelector("form")
-  .addEventListener("submit", addBookMark);
+let form = document.querySelector("form");
+
+form.addEventListener("submit", addBookMark);
 
 toggle.addEventListener("click", () => {
   toggle.classList.toggle("hide");
@@ -59,6 +59,17 @@ function createElement(siteName, siteUrl) {
 function addBookMark(e) {
   let siteName = document.querySelector(".siteName").value;
   let siteUrl = document.querySelector(".siteUrl").value;
+
+  if (
+    !siteUrl.includes("https://") ||
+    siteUrl[8] === "." ||
+    !siteUrl.includes(".")
+  ) {
+    alert("url is not valid");
+    e.preventDefault();
+
+    return false;
+  }
   let bookMark = {
     name: siteName,
     url: siteUrl,
