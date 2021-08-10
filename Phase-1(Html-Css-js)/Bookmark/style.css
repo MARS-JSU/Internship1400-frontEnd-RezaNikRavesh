@@ -176,6 +176,11 @@ body {
   padding-top: 20px;
 }
 @media screen and (max-width: 450px) {
+  
+  
+  .header .title {
+    width: 80%;
+  }
   .form {
     width: 80%;
   }
@@ -199,5 +204,8 @@ body {
   }
   .bookmark-container .bookMark .title {
     overflow: hidden;
+  }
+  .footer .developer {
+    width: 80%;
   }
 }
