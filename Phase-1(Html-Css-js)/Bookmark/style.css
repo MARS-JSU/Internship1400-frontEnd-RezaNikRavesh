@@ -176,22 +176,25 @@ body {
   padding-top: 20px;
 }
 @media screen and (max-width: 450px) {
+  .form {
+    width: 80%;
+  }
   .form .title h2 {
     font-size: large;
   }
   .form .myForm .input {
     width: 100%;
-  
   }
-  .bookmark-container .bookMark{
+  .bookmark-container .bookMark {
     overflow: auto;
+    width: 80%;
   }
   .bookmark-container .bookMark .btn-visit button {
-    width: fit-content;
+    width: 70px;
     height: 40px;
   }
   .bookmark-container .bookMark .btn-remove button {
-    width: fit-content;
+    width: 70px;
     height: 40px;
   }
   .bookmark-container .bookMark .title {
