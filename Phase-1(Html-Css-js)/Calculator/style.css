@@ -11,3 +11,105 @@ body {
     rgba(148, 187, 233, 1) 100%
   );
 }
+.main {
+  min-width: 400px;
+  background: rgb(238, 174, 202);
+  background: linear-gradient(
+    75deg,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  margin: 100px auto;
+  width: 25%;
+  height: 60%;
+  border-radius: 40px;
+  box-shadow: 25px 5px 50px 10px rgb(120, 156, 197);
+  padding: 40px 20px;
+}
+.main .screen {
+  border-radius: 7px;
+  width: 100%;
+  height: 15%;
+  border: 3px solid rgb(233, 76, 144);
+  background-color: rgba(240, 133, 179, 0.5);
+  padding: 15px 20px;
+}
+.main .screen h3 {
+  width: 100%;
+  font-size: x-large;
+  color: white;
+}
+.main .buttons {
+  display: grid;
+  /* grid-template-columns: 50px 50px 50px 50px; */
+  /* grid-template-rows: 50px 50px 50px 50px 50px; */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 50px 50px 50px 50px 50px;
+  column-gap: 10px;
+  row-gap: 10px;
+  margin-top: 70px;
+  width: 100%;
+}
+.main .buttons .button {
+  width: 100%;
+  height: 100%;
+}
+
+.main .buttons .button button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+
+  font-size: x-large;
+  color: white;
+}
+.main .buttons .button button:hover {
+  background-color: rgba(238, 174, 202, 1);
+}
+
+/* numbers */
+
+.main .buttons .number button {
+  border: 2px solid rgb(53, 119, 194);
+  background-color: rgb(106, 161, 224);
+}
+.main .buttons .number button:hover {
+    border: 2px solid rgb(53, 119, 194);
+    background-color: rgb(53, 119, 194);
+    rgb(106, 161, 224)
+}
+
+/* operators */
+.main .buttons .operator button {
+  background-color: orange;
+  border: 2px solid rgb(189, 123, 0);
+}
+.main .buttons .operator button:hover {
+  background-color: rgb(189, 123, 0);
+  border: 2px solid rgb(189, 123, 0);
+}
+
+/* .opt-clear */
+
+.main .buttons .opt-clear button {
+  background-color: red;
+  border: 2px solid rgb(156, 10, 10);
+}
+.main .buttons .opt-clear button:hover {
+  background-color: rgb(156, 10, 10);
+  border: 2px solid rgb(156, 10, 10);
+}
+
+/* .opt-equal */
+.main .buttons .opt-equal {
+  grid-column: 3/5;
+}
+.main .buttons .opt-equal button {
+  background-color: green;
+  border: 2px solid rgb(89, 218, 89);
+}
+.main .buttons .opt-equal button:hover {
+  background-color: rgb(89, 218, 89);
+  border: 2px solid rgb(89, 218, 89);
+}
