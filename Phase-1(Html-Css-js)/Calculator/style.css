@@ -64,8 +64,9 @@ body {
   font-size: x-large;
   color: white;
 }
+/* style for all buttons */
 .main .buttons .button button:hover {
-  background-color: rgba(238, 174, 202, 1);
+  transition: all 0.5s;
 }
 
 /* numbers */
@@ -75,12 +76,10 @@ body {
   background-color: rgb(106, 161, 224);
 }
 .main .buttons .number button:hover {
-    border: 2px solid rgb(53, 119, 194);
-    background-color: rgb(53, 119, 194);
-    rgb(106, 161, 224)
+  border: 2px solid rgb(53, 119, 194);
+  background-color: rgb(53, 119, 194);
 }
-
-/* operators */
+/* all operators */
 .main .buttons .operator button {
   background-color: orange;
   border: 2px solid rgb(189, 123, 0);
@@ -88,6 +87,11 @@ body {
 .main .buttons .operator button:hover {
   background-color: rgb(189, 123, 0);
   border: 2px solid rgb(189, 123, 0);
+}
+
+/* .opt-back */
+.main .buttons .opt-back {
+  transform: rotate(180deg);
 }
 
 /* .opt-clear */
