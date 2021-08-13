@@ -1,12 +1,12 @@
 ///////
 let ul = document.querySelector("ul");
 let logo = document.querySelector(".container .img");
-
 function addItem(name) {
   logo.style.display = "none";
-
   let item =
-    '<li><input type="text" /><div class="buttons"><i class="bx bxs-edit" style="color: #72ef07"></i><i class="bx bxs-trash-alt" style="color: #ff0000"></i></div></li>';
+    "<li><h3>" +
+    name +
+    '</h3><div class="buttons"><i class="bx bxs-edit" style="color: #72ef07"></i><i class="bx bxs-trash-alt" style="color: #ff0000"></i></div></li>';
   ul.innerHTML += item;
 }
 function loadItems() {

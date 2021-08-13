@@ -90,7 +90,8 @@ body {
   flex-wrap: nowrap;
   justify-content: space-between;
 }
-.container .list li input {
+.container .list li h3 {
+  cursor: context-menu;
   width: 80%;
   min-width: 30%;
   height: 30px;
