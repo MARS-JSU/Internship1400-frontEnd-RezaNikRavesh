@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Grocery List</title>
+  </head>
+  <body onload="loadItems()">
+    <div class="container">
+      <div class="title"><h1>Gerocery Bud</h1></div>
+      <div class="form">
+        <form onsubmit="submitHandler(event)">
+          <input required placeholder="e.g. eggs" type="text" />
+          <input type="submit" />
+        </form>
+      </div>
+      <div class="img"><i class='bx bxs-basket' style='color:#cecece' ></i></div>
+
+      <div class="list">
+        <ul></ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

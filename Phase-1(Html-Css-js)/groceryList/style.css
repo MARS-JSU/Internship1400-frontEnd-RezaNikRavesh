@@ -1,0 +1,100 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Cabin", sans-serif;
+}
+button {
+  font-family: "Cabin", sans-serif;
+}
+body {
+  background-image: linear-gradient(
+    -225deg,
+    #ff057c 0%,
+    #8d0b93 50%,
+    #321575 100%
+  );
+}
+.container {
+  box-shadow: rgba(0, 0, 0, 0.25) 40px 40px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  margin: 100px auto;
+  width: 50%;
+  min-height: 70%;
+  flex-direction: column;
+}
+.container .title {
+  width: 100%;
+  text-align: center;
+  margin-top: 100px;
+}
+.container .title h1 {
+  font-weight: lighter;
+}
+.container .form {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+.container .form input[type="text"] {
+  width: 60%;
+  padding-left: 10px;
+  border-radius: 5px;
+  height: 35px;
+  font-size: medium;
+  outline-color: blue;
+  color: black;
+  font-weight: bold;
+  border: 2px solid rgb(203, 205, 206);
+}
+.container .form input[type="text"]:focus {
+  background-color: rgba(223, 223, 223, 0.733);
+}
+.container .form input[type="submit"] {
+  border-radius: 5px;
+  border: 0px;
+  background-color: rgb(145, 173, 226);
+  color: white;
+  width: 10%;
+  height: 30px;
+}
+.container .form input[type="submit"]:hover {
+  background-color: blue;
+  transition: all 0.5s;
+}
+.container .img {
+  display: none;
+
+  text-align: center;
+  width: 100%;
+  margin-top: 70px;
+}
+.container .img i {
+  width: 100%;
+  font-size: 200px;
+}
+.container .list {
+  margin-top: 10px;
+  padding: 10px 15%;
+  height: 100%;
+}
+.container .list li {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  align-content: space-between;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.container .list li input {
+  width: 80%;
+  min-width: 30%;
+  height: 30px;
+}
+.container .list li .buttons i {
+  cursor: pointer;
+}
