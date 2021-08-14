@@ -1,6 +1,5 @@
 let ul = document.querySelector("ul");
 let logo = document.querySelector(".container .img");
-
 function removeItem(name) {
   let listItems = JSON.parse(localStorage.getItem("listItems"));
 
@@ -20,18 +19,21 @@ function addItem(name) {
   let div = document.createElement("div");
   let ic_remove = document.createElement("i");
   let ic_edit = document.createElement("i");
+  let ic_move = document.createElement("i");
 
   //add atributes
   h3.innerHTML = name;
   div.className = "buttons";
   ic_edit.className = "bx bxs-edit";
-  ic_edit.style.color = "#72ef07";
+  // ic_edit.style.color = "#72ef07";
   ic_remove.className = "bx bxs-trash-alt";
-  ic_remove.style.color = "#ff0000";
-
+  // ic_remove.style.color = "#ff0000";
+  ic_move.className = "bx bx-move";
+  // ic_move.style.color = "#b7b4b4";
   //apend
   div.appendChild(ic_remove);
   div.appendChild(ic_edit);
+  div.appendChild(ic_move);
   li.appendChild(h3);
   li.appendChild(div);
   ul.appendChild(li);
