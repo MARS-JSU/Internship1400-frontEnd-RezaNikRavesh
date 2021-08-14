@@ -66,6 +66,17 @@ function submitHandler(e) {
   let input = document.querySelector(".form input");
   let form = document.querySelector(".form form");
 
+  if (localStorage.getItem("listItems") !== null) {
+    for (const item of JSON.parse(localStorage.getItem("listItems"))) {
+      if (item.name == input.value) {
+        alert("exist");
+        form.reset();
+        e.preventDefault();
+        return false;
+      }
+    }
+  }
+
   if (localStorage.getItem("listItems") === null) {
     let listItems = [
       {
