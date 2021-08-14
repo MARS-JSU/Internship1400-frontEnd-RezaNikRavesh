@@ -15,7 +15,6 @@ body {
     #321575 100%
   );
 }
-
 .container {
   min-width: 200px;
   box-shadow: rgba(0, 0, 0, 0.25) 40px 40px 28px,
@@ -35,6 +34,20 @@ body {
 }
 .container .title h1 {
   font-weight: lighter;
+}
+.container .error {
+  text-align: center;
+  width: 100%;
+}
+.container .error span {
+white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;
+margin: 0px auto;
+  display: none;
+  color: red;
+  width: 30%;
+  font-weight: 300;
 }
 .container .form {
   margin-top: 30px;
@@ -61,7 +74,7 @@ body {
   background-color: rgb(145, 173, 226);
   color: white;
   width: 10%;
-  height: 30px;
+  height: 33px;
 }
 .container .form input[type="submit"]:hover {
   background-color: blue;
@@ -97,9 +110,8 @@ body {
   background-color: rgb(255, 255, 255);
   box-shadow: 5px 5px 10px 2px rgb(190, 190, 190);
 }
-.container .list li .buttons{
+.container .list li .buttons {
   /* border: 2px solid red; */
-  
 }
 .container .list li h3 {
   /* border: 2px solid red; */

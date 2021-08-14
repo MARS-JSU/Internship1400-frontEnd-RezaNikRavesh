@@ -1,5 +1,7 @@
 let ul = document.querySelector("ul");
 let logo = document.querySelector(".container .img");
+let err = document.querySelector(".container .error span");
+
 function removeItem(name) {
   let listItems = JSON.parse(localStorage.getItem("listItems"));
 
@@ -11,6 +13,7 @@ function removeItem(name) {
 }
 function editItem(name) {}
 function addItem(name) {
+  err.style.display = "none";
   logo.style.display = "none";
 
   //crate elements
@@ -65,12 +68,11 @@ function loadItems() {
 function submitHandler(e) {
   let input = document.querySelector(".form input");
   let form = document.querySelector(".form form");
-
   if (localStorage.getItem("listItems") !== null) {
     for (const item of JSON.parse(localStorage.getItem("listItems"))) {
-      if (item.name == input.value) {
-        alert("exist");
-        form.reset();
+      if (item.name == input.value.trim()) {
+        err.style.display = "block";
+        // form.reset();
         e.preventDefault();
         return false;
       }
