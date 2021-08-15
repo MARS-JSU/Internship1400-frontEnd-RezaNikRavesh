@@ -78,6 +78,7 @@ body {
   height: 33px;
 }
 .container .form input[type="submit"]:hover {
+  cursor: pointer;
   background-color: blue;
   transition: all 0.5s;
 }

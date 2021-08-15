@@ -5,6 +5,8 @@ let ic_move = document.querySelector(".lis li .bx-move");
 let dragArea = document.querySelector(".list ul");
 let clear = document.querySelector(".container .clear");
 let clearBtn = document.querySelector(".container .clear h2");
+let inputText = document.querySelector("form .inp");
+
 new Sortable(dragArea, {
   animation: 350,
   handle: ".bx-move",
@@ -12,9 +14,14 @@ new Sortable(dragArea, {
 
 // add listener
 clearBtn.addEventListener("click", clearItems);
+inputText.addEventListener("input", () => {
+  err.style.display = "none";
+});
+inputText.addEventListener("change", () => {
+  err.style.display = "none";
+});
 
 // functions
-
 function loadItems() {
   ul.innerHTML = "";
 
