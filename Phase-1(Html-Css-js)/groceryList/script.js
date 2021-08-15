@@ -11,16 +11,16 @@ new Sortable(dragArea, {
   animation: 350,
   handle: ".bx-move",
 });
-
 // add listener
-clearBtn.addEventListener("click", clearItems);
+clearBtn.addEventListener("click", () => {
+  showModal("all");
+});
 inputText.addEventListener("input", () => {
   err.style.display = "none";
 });
 inputText.addEventListener("change", () => {
   err.style.display = "none";
 });
-
 // functions
 function loadItems() {
   ul.innerHTML = "";
@@ -127,10 +127,17 @@ function showModal(name) {
   cancel.addEventListener("click", () => {
     modal.style.display = "none";
   });
-  yes.addEventListener("click", () => {
-    removeItem(name);
-    modal.style.display = "none";
-  });
+  if (name == "all") {
+    yes.addEventListener("click", () => {
+      clearItems();
+      modal.style.display = "none";
+    });
+  } else {
+    yes.addEventListener("click", () => {
+      removeItem(name);
+      modal.style.display = "none";
+    });
+  }
 }
 function removeItem(name) {
   let listItems = JSON.parse(localStorage.getItem("listItems"));
