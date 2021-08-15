@@ -6,7 +6,7 @@ let dragArea = document.querySelector(".list ul");
 let clear = document.querySelector(".container .clear");
 let clearBtn = document.querySelector(".container .clear h2");
 let inputText = document.querySelector("form .inp");
-
+let modal = document.querySelector(".modal");
 new Sortable(dragArea, {
   animation: 350,
   handle: ".bx-move",
@@ -108,10 +108,30 @@ function addItem(name) {
     editItem(name);
   });
   ic_remove.addEventListener("click", () => {
-    removeItem(name);
+    // removeItem(name);
+    showModal(name);
   });
 }
 function editItem(name) {}
+function showModal(name) {
+  modal.style.display = "block";
+  let close = document.querySelector(".modal .content .header .close");
+  let yes = document.querySelector(".modal .content .footer .yes button");
+  let cancel = document.querySelector(".modal .content .footer .cancel button");
+  let message = document.querySelector(".modal .content .message p");
+
+  message.innerHTML = "Are you sure you want to delete " + name + " ?";
+  close.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+  cancel.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+  yes.addEventListener("click", () => {
+    removeItem(name);
+    modal.style.display = "none";
+  });
+}
 function removeItem(name) {
   let listItems = JSON.parse(localStorage.getItem("listItems"));
 
