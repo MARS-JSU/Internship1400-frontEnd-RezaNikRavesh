@@ -3,58 +3,18 @@ let logo = document.querySelector(".container .img");
 let err = document.querySelector(".container .error span");
 let ic_move = document.querySelector(".lis li .bx-move");
 let dragArea = document.querySelector(".list ul");
+let clear = document.querySelector(".container .clear");
+let clearBtn = document.querySelector(".container .clear h2");
 new Sortable(dragArea, {
   animation: 350,
   handle: ".bx-move",
 });
 
-function removeItem(name) {
-  let listItems = JSON.parse(localStorage.getItem("listItems"));
+// add listener
+clearBtn.addEventListener("click", clearItems);
 
-  for (let index = 0; index < listItems.length; index++) {
-    if (name == listItems[index].name) listItems.splice(index, 1);
-  }
-  localStorage.setItem("listItems", JSON.stringify(listItems));
-  loadItems();
-}
-function editItem(name) {}
-function addItem(name) {
-  err.style.display = "none";
-  logo.style.display = "none";
+// functions
 
-  //crate elements
-  let li = document.createElement("li");
-  let h3 = document.createElement("h3");
-  let div = document.createElement("div");
-  let ic_remove = document.createElement("i");
-  let ic_edit = document.createElement("i");
-  let ic_move = document.createElement("i");
-
-  //add atributes
-  h3.innerHTML = name;
-  div.className = "buttons";
-  ic_edit.className = "bx bxs-edit";
-  // ic_edit.style.color = "#72ef07";
-  ic_remove.className = "bx bxs-trash-alt";
-  // ic_remove.style.color = "#ff0000";
-  ic_move.className = "bx bx-move";
-  // ic_move.style.color = "#b7b4b4";
-  //apend
-  div.appendChild(ic_remove);
-  div.appendChild(ic_edit);
-  div.appendChild(ic_move);
-  li.appendChild(h3);
-  li.appendChild(div);
-  ul.appendChild(li);
-
-  // add listener
-  ic_edit.addEventListener("click", () => {
-    editItem(name);
-  });
-  ic_remove.addEventListener("click", () => {
-    removeItem(name);
-  });
-}
 function loadItems() {
   ul.innerHTML = "";
 
@@ -63,6 +23,7 @@ function loadItems() {
     JSON.parse(localStorage.getItem("listItem")).length === 0
   )
     logo.style.display = "block";
+  clear.style.display = "none";
   for (
     let item = 0;
     item < JSON.parse(localStorage.getItem("listItems")).length;
@@ -107,4 +68,55 @@ function submitHandler(e) {
 
   form.reset();
   e.preventDefault();
+}
+function addItem(name) {
+  err.style.display = "none";
+  logo.style.display = "none";
+  clear.style.display = "block";
+
+  //crate elements
+  let li = document.createElement("li");
+  let h3 = document.createElement("h3");
+  let div = document.createElement("div");
+  let ic_remove = document.createElement("i");
+  let ic_edit = document.createElement("i");
+  let ic_move = document.createElement("i");
+
+  //add atributes
+  h3.innerHTML = name;
+  div.className = "buttons";
+  ic_edit.className = "bx bxs-edit";
+  ic_remove.className = "bx bxs-trash-alt";
+  ic_move.className = "bx bx-move";
+  //apend
+  div.appendChild(ic_remove);
+  div.appendChild(ic_edit);
+  div.appendChild(ic_move);
+  li.appendChild(h3);
+  li.appendChild(div);
+  ul.appendChild(li);
+
+  // add listener
+  ic_edit.addEventListener("click", () => {
+    editItem(name);
+  });
+  ic_remove.addEventListener("click", () => {
+    removeItem(name);
+  });
+}
+function editItem(name) {}
+function removeItem(name) {
+  let listItems = JSON.parse(localStorage.getItem("listItems"));
+
+  for (let index = 0; index < listItems.length; index++) {
+    if (name == listItems[index].name) listItems.splice(index, 1);
+  }
+  localStorage.setItem("listItems", JSON.stringify(listItems));
+  loadItems();
+}
+function clearItems() {
+  let listItems = JSON.parse(localStorage.getItem("listItems"));
+  listItems = [];
+  localStorage.setItem("listItems", JSON.stringify(listItems));
+  loadItems();
 }
