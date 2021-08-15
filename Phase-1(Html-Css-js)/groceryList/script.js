@@ -1,6 +1,12 @@
 let ul = document.querySelector("ul");
 let logo = document.querySelector(".container .img");
 let err = document.querySelector(".container .error span");
+let ic_move = document.querySelector(".lis li .bx-move");
+let dragArea = document.querySelector(".list ul");
+new Sortable(dragArea, {
+  animation: 350,
+  handle: ".bx-move",
+});
 
 function removeItem(name) {
   let listItems = JSON.parse(localStorage.getItem("listItems"));

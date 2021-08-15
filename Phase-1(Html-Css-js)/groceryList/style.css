@@ -145,7 +145,11 @@ body {
 }
 .container .list li .buttons i.bx-move:hover {
   color: black;
-  cursor: move;
+  cursor: grab;
+}
+.container .list li .buttons i.bx-move:active {
+  color: black;
+  cursor: grabbing;
 }
 
 @media screen and (max-width: 450px) {
