@@ -7,6 +7,9 @@ let dragArea = document.querySelector(".list ul");
 let clear = document.querySelector(".container .clear");
 let clearBtn = document.querySelector(".container .clear h2");
 let inputText = document.querySelector("form .inp");
+let confirmm = document.querySelector(
+  ".modal .content .footer .confirmm button"
+);
 new Sortable(dragArea, {
   animation: 350,
   handle: ".bx-move",
@@ -127,9 +130,6 @@ function showModal(action, name) {
   let input = document.querySelector(".modal .content .input");
   let inputText = document.querySelector(".modal .content .input input");
   let close = document.querySelector(".modal .content .header .close");
-  let confirm = document.querySelector(
-    ".modal .content .footer .confirmm button"
-  );
   let cancel = document.querySelector(".modal .content .footer .cancel button");
   let message = document.querySelector(".modal .content .message p");
   let title = document.querySelector(".modal .content .header .title h3");
@@ -145,19 +145,21 @@ function showModal(action, name) {
     modal.style.display = "none";
     err.style.display = "none";
   });
+
+  
   if (action === "remove") {
     title.innerHTML = "Delete Item";
     input.style.display = "none";
     message.innerHTML = "Are you sure you want to delete " + name + " ?";
 
     if (name == "all") {
-      confirm.addEventListener("click", () => {
+      confirmm.addEventListener("click", () => {
         clearItems();
         modal.style.display = "none";
         err.style.display = "none";
       });
     } else {
-      confirm.addEventListener("click", () => {
+      confirmm.addEventListener("click", () => {
         removeItem(name);
         modal.style.display = "none";
         err.style.display = "none";
@@ -172,11 +174,11 @@ function showModal(action, name) {
     inputText.addEventListener("input", () => {
       err.style.display = "none";
     });
-    confirm.addEventListener("click", () => {
+    confirmm.addEventListener("click", () => {
       if (localStorage.getItem("listItems") !== null) {
         for (const item of JSON.parse(localStorage.getItem("listItems"))) {
           if (item.name === inputText.value.trim()) {
-            alert('same found')
+            alert("same found");
             err.style.display = "block";
             return false;
           }
@@ -188,18 +190,18 @@ function showModal(action, name) {
     });
   }
 
-  // confirm.removeEventListener('click')
-  confirm.removeEventListener("click", () => {
+  // confirmm.removeEventListener('click')
+  confirmm.removeEventListener("click", () => {
     clearItems();
     modal.style.display = "none";
     err.style.display = "none";
   });
-  confirm.removeEventListener("click", () => {
+  confirmm.removeEventListener("click", () => {
     removeItem(name);
     modal.style.display = "none";
     err.style.display = "none";
   });
-  confirm.removeEventListener("click", () => {
+  confirmm.removeEventListener("click", () => {
     if (localStorage.getItem("listItems") !== null) {
       for (const item of JSON.parse(localStorage.getItem("listItems"))) {
         if (item.name === inputText.value.trim()) {
@@ -229,5 +231,3 @@ function clearItems() {
   localStorage.setItem("listItems", JSON.stringify(listItems));
   loadItems();
 }
-
-
