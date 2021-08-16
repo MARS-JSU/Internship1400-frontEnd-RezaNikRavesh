@@ -10,6 +10,9 @@ let inputText = document.querySelector("form .inp");
 let confirmm = document.querySelector(
   ".modal .content .footer .confirmm button"
 );
+let modalErr = document.querySelector(".modal .content .input .error");
+let modal = document.querySelector(".modal");
+
 new Sortable(dragArea, {
   animation: 350,
   handle: ".bx-move",
@@ -126,43 +129,40 @@ function editItem(name, newName) {
   loadItems();
 }
 function showModal(action, name) {
-  let modal = document.querySelector(".modal");
+  console.log("g");
   let input = document.querySelector(".modal .content .input");
   let inputText = document.querySelector(".modal .content .input input");
   let close = document.querySelector(".modal .content .header .close");
   let cancel = document.querySelector(".modal .content .footer .cancel button");
   let message = document.querySelector(".modal .content .message p");
   let title = document.querySelector(".modal .content .header .title h3");
-  let err = document.querySelector(".modal .content .input .error");
   modal.style.display = "block";
-  err.style.display = "none";
+  modalErr.style.display = "none";
 
   close.addEventListener("click", () => {
     modal.style.display = "none";
-    err.style.display = "none";
+    modalErr.style.display = "none";
   });
   cancel.addEventListener("click", () => {
     modal.style.display = "none";
-    err.style.display = "none";
+    modalErr.style.display = "none";
   });
 
-  
   if (action === "remove") {
+    console.log("remove");
+
     title.innerHTML = "Delete Item";
     input.style.display = "none";
     message.innerHTML = "Are you sure you want to delete " + name + " ?";
 
     if (name == "all") {
-      confirmm.addEventListener("click", () => {
-        clearItems();
-        modal.style.display = "none";
-        err.style.display = "none";
-      });
+      console.log("all");
+      confirmm.addEventListener("click", clearItems);
     } else {
       confirmm.addEventListener("click", () => {
         removeItem(name);
         modal.style.display = "none";
-        err.style.display = "none";
+        modalErr.style.display = "none";
       });
     }
   } else if (action === "edit") {
@@ -172,48 +172,25 @@ function showModal(action, name) {
     inputText.value = name;
     inputText.select();
     inputText.addEventListener("input", () => {
-      err.style.display = "none";
+      modalErr.style.display = "none";
     });
     confirmm.addEventListener("click", () => {
       if (localStorage.getItem("listItems") !== null) {
         for (const item of JSON.parse(localStorage.getItem("listItems"))) {
           if (item.name === inputText.value.trim()) {
             alert("same found");
-            err.style.display = "block";
+            modalErr.style.display = "block";
             return false;
           }
         }
       }
       modal.style.display = "none";
-      err.style.display = "none";
+      modalErr.style.display = "none";
       editItem(name, inputText.value.trim());
     });
   }
 
   // confirmm.removeEventListener('click')
-  confirmm.removeEventListener("click", () => {
-    clearItems();
-    modal.style.display = "none";
-    err.style.display = "none";
-  });
-  confirmm.removeEventListener("click", () => {
-    removeItem(name);
-    modal.style.display = "none";
-    err.style.display = "none";
-  });
-  confirmm.removeEventListener("click", () => {
-    if (localStorage.getItem("listItems") !== null) {
-      for (const item of JSON.parse(localStorage.getItem("listItems"))) {
-        if (item.name === inputText.value.trim()) {
-          err.style.display = "block";
-          return false;
-        }
-      }
-    }
-    modal.style.display = "none";
-    err.style.display = "none";
-    editItem(name, inputText.value.trim());
-  });
 }
 function removeItem(name) {
   let listItems = JSON.parse(localStorage.getItem("listItems"));
@@ -225,9 +202,13 @@ function removeItem(name) {
   loadItems();
 }
 function clearItems() {
+  modal.style.display = "none";
+  modalErr.style.display = "none";
   err.style.display = "none";
   let listItems = JSON.parse(localStorage.getItem("listItems"));
   listItems = [];
   localStorage.setItem("listItems", JSON.stringify(listItems));
   loadItems();
+  confirmm.removeEventListener("click", clearItems);
+
 }
