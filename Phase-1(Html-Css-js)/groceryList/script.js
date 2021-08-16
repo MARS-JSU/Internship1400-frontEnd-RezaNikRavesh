@@ -10,8 +10,8 @@ let inputText = document.querySelector("form .inp");
 let confirmm = document.querySelector(
   ".modal .content .footer .confirmm button"
 );
-let modalErr = document.querySelector(".modal .content .input .error");
 let modal = document.querySelector(".modal");
+let editModal = document.querySelector(".edit-modal");
 
 new Sortable(dragArea, {
   animation: 350,
@@ -110,12 +110,53 @@ function addItem(name) {
   ul.appendChild(li);
 
   // add listener
-  ic_edit.addEventListener("click", () => {
+  ic_edit.addEventListener("click", function () {
     // editItem(name);
-    showModal("edit", name);
+    showEditModal(name);
   });
   ic_remove.addEventListener("click", () => {
     showModal("remove", name);
+  });
+}
+function showEditModal(name) {
+  let input = document.querySelector(".edit-modal .content .input");
+  let inputText = document.querySelector(".edit-modal .content .input input");
+  let close = document.querySelector(".edit-modal .content .header .close i");
+  let cancel = document.querySelector(
+    ".edit-modal .content .footer .cancel button"
+  );
+  let confirmm = document.querySelector(
+    ".edit-modal .content .footer .confirmm button"
+  );
+  let err = document.querySelector(".edit-modal .content .input .error");
+  let newName;
+  editModal.style.display = "block";
+  err.style.display = "none";
+
+  inputText.value = name;
+  inputText.select();
+
+  close.addEventListener("click", function () {
+    editModal.style.display = "none";
+  });
+  cancel.addEventListener("click", function () {
+    editModal.style.display = "none";
+  });
+  inputText.addEventListener("input", function () {
+    err.style.display = "none";
+  });
+  confirmm.addEventListener("click", function () {
+    let listItems = JSON.parse(localStorage.getItem("listItems"));
+    for (const item of listItems) {
+      if (item.name.trim() === inputText.value.trim()) {
+        err.style.display = "block";
+        return false;
+      }
+    }
+    editItem(name, inputText.value.trim());
+    err.style.display = "none";
+    editModal.style.display = "none";
+    
   });
 }
 function editItem(name, newName) {
@@ -135,16 +176,14 @@ function showModal(action, name) {
   let cancel = document.querySelector(".modal .content .footer .cancel button");
   let message = document.querySelector(".modal .content .message p");
   let title = document.querySelector(".modal .content .header .title h3");
+  input.style.display = "none";
   modal.style.display = "block";
-  modalErr.style.display = "none";
 
   close.addEventListener("click", () => {
     modal.style.display = "none";
-    modalErr.style.display = "none";
   });
   cancel.addEventListener("click", () => {
     modal.style.display = "none";
-    modalErr.style.display = "none";
   });
 
   if (action === "remove") {
@@ -158,31 +197,8 @@ function showModal(action, name) {
       confirmm.addEventListener("click", function () {
         removeItem(name);
         modal.style.display = "none";
-        modalErr.style.display = "none";
       });
     }
-  } else if (action === "edit") {
-    input.style.display = "block";
-    title.innerHTML = "Edit Item";
-    message.innerHTML = "Enter the new value : ";
-    inputText.value = name;
-    inputText.select();
-    inputText.addEventListener("input", () => {
-      modalErr.style.display = "none";
-    });
-    confirmm.addEventListener("click", () => {
-      if (localStorage.getItem("listItems") !== null) {
-        for (const item of JSON.parse(localStorage.getItem("listItems"))) {
-          if (item.name === inputText.value.trim()) {
-            modalErr.style.display = "block";
-            return false;
-          }
-        }
-      }
-      modal.style.display = "none";
-      modalErr.style.display = "none";
-      editItem(name, inputText.value.trim());
-    });
   }
 
   // confirmm.removeEventListener('click')
@@ -198,7 +214,6 @@ function removeItem(name) {
 }
 function clearItems() {
   modal.style.display = "none";
-  modalErr.style.display = "none";
   err.style.display = "none";
   let listItems = JSON.parse(localStorage.getItem("listItems"));
   listItems = [];
