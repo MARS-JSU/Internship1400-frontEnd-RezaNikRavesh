@@ -87,7 +87,7 @@ body {
   border: 0px;
   color: white;
 }
-.modal .content .footer .buttons button:hover {
+.modal .content .footer  button:hover {
   cursor: pointer;
   background-color: #ff007b;
 }
