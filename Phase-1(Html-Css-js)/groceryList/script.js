@@ -129,7 +129,6 @@ function editItem(name, newName) {
   loadItems();
 }
 function showModal(action, name) {
-  console.log("g");
   let input = document.querySelector(".modal .content .input");
   let inputText = document.querySelector(".modal .content .input input");
   let close = document.querySelector(".modal .content .header .close");
@@ -149,17 +148,14 @@ function showModal(action, name) {
   });
 
   if (action === "remove") {
-    console.log("remove");
-
     title.innerHTML = "Delete Item";
     input.style.display = "none";
     message.innerHTML = "Are you sure you want to delete " + name + " ?";
 
     if (name == "all") {
-      console.log("all");
       confirmm.addEventListener("click", clearItems);
     } else {
-      confirmm.addEventListener("click", () => {
+      confirmm.addEventListener("click", function () {
         removeItem(name);
         modal.style.display = "none";
         modalErr.style.display = "none";
@@ -178,7 +174,6 @@ function showModal(action, name) {
       if (localStorage.getItem("listItems") !== null) {
         for (const item of JSON.parse(localStorage.getItem("listItems"))) {
           if (item.name === inputText.value.trim()) {
-            alert("same found");
             modalErr.style.display = "block";
             return false;
           }
@@ -210,5 +205,4 @@ function clearItems() {
   localStorage.setItem("listItems", JSON.stringify(listItems));
   loadItems();
   confirmm.removeEventListener("click", clearItems);
-
 }
