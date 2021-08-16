@@ -70,6 +70,35 @@ body {
   overflow: hidden;
   color: white;
 }
+.modal .content .input {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* border: 2px solid red; */
+  width: 60%;
+}
+.modal .content .input input[type="text"] {
+  width: 100%;
+  padding-left: 10px;
+  border-radius: 5px;
+  height: 35px;
+  font-size: medium;
+  outline-color: blue;
+  color: black;
+  font-weight: bold;
+  border: 0px solid rgb(203, 205, 206);
+}
+.modal .content .input input[type="text"]:focus {
+  background-color: rgba(223, 223, 223, 0.733);
+}
+.modal .content .input .error {
+  display: none;
+  padding: 5px;
+}
+.modal .content .input .error {
+  color: red;
+}
 .modal .content .footer {
   display: flex;
   justify-content: flex-end;
@@ -81,13 +110,12 @@ body {
   border: 2px solid red;
   padding: 5px;
   margin: 5px;
-  width: 50px;
   border-radius: 5px;
   background-color: #b30659;
   border: 0px;
   color: white;
 }
-.modal .content .footer  button:hover {
+.modal .content .footer button:hover {
   cursor: pointer;
   background-color: #ff007b;
 }
@@ -111,20 +139,6 @@ body {
 }
 .container .title h1 {
   font-weight: lighter;
-}
-.container .error {
-  text-align: center;
-  width: 100%;
-}
-.container .error span {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  margin: 0px auto;
-  display: none;
-  color: red;
-  width: 30%;
-  font-weight: 300;
 }
 .container .form {
   margin-top: 30px;
@@ -157,6 +171,21 @@ body {
   cursor: pointer;
   background-color: blue;
   transition: all 0.5s;
+}
+.container .error {
+  margin-top: 5px;
+  text-align: center;
+  width: 100%;
+}
+.container .error span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0px auto;
+  display: none;
+  color: red;
+  width: 30%;
+  font-weight: 300;
 }
 .container .img {
   display: none;
