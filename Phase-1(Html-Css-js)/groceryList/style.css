@@ -379,6 +379,13 @@ body {
   color: rgb(146, 5, 5);
 }
 @media screen and (max-width: 450px) {
+  .edit-modal .content {
+    box-shadow: rgba(0, 0, 0, 0.25) 40px 40px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 20px;
+    width: 60%;
+    margin: 15% auto;
+  }
   .modal .content {
     box-shadow: rgba(0, 0, 0, 0.25) 40px 40px 28px,
       rgba(0, 0, 0, 0.22) 0px 10px 10px;
