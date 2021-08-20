@@ -8,13 +8,20 @@ button {
   font-family: "Poppins", sans-serif;
 }
 .container {
+  background: rgb(255, 74, 46);
+  background: linear-gradient(
+    48deg,
+    rgba(255, 74, 46, 1) 0%,
+    rgba(255, 65, 101, 1) 100%
+  );
   display: flex;
   width: 50%;
   margin: 100px auto;
   height: 500px;
-  box-shadow: 10px 10px 30px 0px rgb(141, 141, 141);
+  box-shadow: rgba(0, 0, 0, 0.16) -5px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .form-container {
+  background-color: white;
   width: 50%;
   text-align: center;
 }
@@ -67,4 +74,35 @@ button {
 .form-container input[type="submit"]:hover {
   background-color: #d8381c;
   cursor: pointer;
+}
+
+.overlay-container {
+  width: 50%;
+  text-align: center;
+  padding-top: 20%;
+}
+.overlay-container h2 {
+  margin-bottom: 30px;
+  color: white;
+}
+.overlay-container p {
+  padding: 0px 40px;
+  margin-bottom: 30px;
+
+  color: white;
+}
+.overlay-container button {
+  width: 30%;
+  height: 30px;
+  border-radius: 30px;
+  color: white;
+  border: 1px solid white;
+  background-color: inherit;
+  cursor: pointer;
+}
+.panel-right button:hover {
+  background-color: rgb(255, 34, 0);
+}
+.panel-left button:hover {
+  background-color: rgb(245, 40, 78);
 }
