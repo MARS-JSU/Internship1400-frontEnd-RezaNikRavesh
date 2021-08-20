@@ -1,0 +1,70 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+button {
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  display: flex;
+  width: 50%;
+  margin: 100px auto;
+  height: 500px;
+  box-shadow: 10px 10px 30px 0px rgb(141, 141, 141);
+}
+.form-container {
+  width: 50%;
+  text-align: center;
+}
+.form-container h2 {
+  margin-top: 20%;
+  font-size: xx-large;
+}
+
+.form-container .social-pic {
+  margin: 10px 0;
+}
+.form-container .social-pic i {
+  font-size: x-large;
+  border-radius: 50%;
+  margin-left: 5px;
+  padding: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border: 1px solid rgba(136, 136, 136, 0.3);
+}
+.form-container .social-pic i:hover {
+  cursor: pointer;
+  background-color: rgb(206, 206, 206);
+}
+.form-container p {
+  font-size: smaller;
+  color: #696969;
+}
+.form-container p.forgot-password:hover {
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+.form-container form input {
+  display: block;
+  width: 70%;
+  height: 35px;
+  padding-left: 5px;
+  background-color: #eeeeee;
+  margin: 15px auto;
+  border: 1px solid #eeeeee;
+}
+.form-container input[type="submit"] {
+  width: 30%;
+  border-radius: 30px;
+  color: white;
+  border-width: 0px;
+  background-color: #fe4a2a;
+}
+.form-container input[type="submit"]:hover {
+  background-color: #d8381c;
+  cursor: pointer;
+}
