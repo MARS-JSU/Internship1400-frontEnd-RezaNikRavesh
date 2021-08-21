@@ -8,28 +8,26 @@ button {
   font-family: "Poppins", sans-serif;
 }
 .container {
-  background: rgb(255, 74, 46);
-  background: linear-gradient(
-    48deg,
-    rgba(255, 74, 46, 1) 0%,
-    rgba(255, 65, 101, 1) 100%
-  );
-  display: flex;
+  position: relative;
+  overflow: hidden;
   width: 50%;
   margin: 100px auto;
   height: 500px;
   box-shadow: rgba(0, 0, 0, 0.16) -5px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .form-container {
+  position: absolute;
+  border: 2px solid blue;
   background-color: white;
   width: 50%;
+  height: 100%;
   text-align: center;
 }
 .form-container h2 {
+  cursor: context-menu;
   margin-top: 20%;
   font-size: xx-large;
 }
-
 .form-container .social-pic {
   margin: 10px 0;
 }
@@ -47,6 +45,7 @@ button {
   background-color: rgb(206, 206, 206);
 }
 .form-container p {
+  cursor: context-menu;
   font-size: smaller;
   color: #696969;
 }
@@ -75,20 +74,34 @@ button {
   background-color: #d8381c;
   cursor: pointer;
 }
-
+.overlays {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 74, 46);
+  background: linear-gradient(
+    48deg,
+    rgba(255, 74, 46, 1) 0%,
+    rgba(255, 65, 101, 1) 100%
+  );
+}
 .overlay-container {
+  position: absolute;
+  border: 2px solid blue;
   width: 50%;
+  height: 100%;
   text-align: center;
   padding-top: 20%;
 }
 .overlay-container h2 {
+  cursor: context-menu;
   margin-bottom: 30px;
   color: white;
 }
 .overlay-container p {
+  cursor: context-menu;
   padding: 0px 40px;
   margin-bottom: 30px;
-
   color: white;
 }
 .overlay-container button {
@@ -97,7 +110,7 @@ button {
   border-radius: 30px;
   color: white;
   border: 1px solid white;
-  background-color: inherit;
+  background-color: transparent;
   cursor: pointer;
 }
 .panel-right button:hover {
@@ -105,4 +118,28 @@ button {
 }
 .panel-left button:hover {
   background-color: rgb(245, 40, 78);
+}
+.panel-right {
+  display: none;
+}
+.panel-left {
+  transition: all 0.5s;
+  left: 0;
+  background-color: red;
+  z-index: 4;
+}
+.signup-container {
+  right: 3;
+  z-index: 2;
+}
+.signin-container {
+  z-index: 1;
+  z-index: 2;
+}
+.right-active-container .panel-left {
+  background-color: red;
+  transform: translateX(100%);
+  transition: all 0.5s;
+}
+.right-active-container .signup-container {
 }
