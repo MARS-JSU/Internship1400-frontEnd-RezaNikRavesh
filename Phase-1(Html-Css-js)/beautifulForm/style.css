@@ -17,7 +17,6 @@ button {
 }
 .form-container {
   position: absolute;
-  border: 2px solid blue;
   background-color: white;
   width: 50%;
   height: 100%;
@@ -74,20 +73,8 @@ button {
   background-color: #d8381c;
   cursor: pointer;
 }
-.overlays {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: rgb(255, 74, 46);
-  background: linear-gradient(
-    48deg,
-    rgba(255, 74, 46, 1) 0%,
-    rgba(255, 65, 101, 1) 100%
-  );
-}
 .overlay-container {
   position: absolute;
-  border: 2px solid blue;
   width: 50%;
   height: 100%;
   text-align: center;
@@ -100,7 +87,7 @@ button {
 }
 .overlay-container p {
   cursor: context-menu;
-  padding: 0px 40px;
+  padding: 0px 20px;
   margin-bottom: 30px;
   color: white;
 }
