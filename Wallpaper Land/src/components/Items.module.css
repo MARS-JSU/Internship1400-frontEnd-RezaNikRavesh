@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.container {
+  cursor: pointer;
+  width: 270px;
+  height: 180px;
+  margin: 15px 5px 5px 5px;
+  position: relative;
+
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.content {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+.tools {
+  cursor: context-menu;
+  display: none;
+  width: 100%;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.5494572829131652) 85%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  position: absolute;
+}
+.title {
+  color: white;
+  font-weight: normal;
+  display: inline-block;
+  position: relative;
+  left: 20px;
+  font-family: "Poppins", sans-serif;
+}
+box-icon[name="download"] {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+}
+box-icon[name="bookmark"] {
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+}
+.content:hover .tools {
+  display: block;
+}

@@ -1,0 +1,8 @@
+.container {
+}
+.wallpapers {
+  display: flex;
+  flex-wrap: wrap;
+  width: 85%;
+  margin: 70px auto;
+}

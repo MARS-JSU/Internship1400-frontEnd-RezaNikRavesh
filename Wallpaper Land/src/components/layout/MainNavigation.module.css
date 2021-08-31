@@ -1,0 +1,37 @@
+
+a {
+  text-decoration: none;
+}
+.container {
+  display: flex;
+  width: 100%;
+  background-color: rgb(175, 0, 0);
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  width: 20%;
+  margin-left: 60px;
+}
+.logo h1 {
+  color: white;
+  cursor: context-menu;
+}
+
+nav {
+  text-align: center;
+  width: 50%;
+}
+nav li {
+  margin-left: 30px;
+  list-style-type: none;
+  display: inline-block;
+}
+li a {
+  color: white;
+  font-size: large;
+}
+li a:hover {
+  color: #d1cfcf;
+}
