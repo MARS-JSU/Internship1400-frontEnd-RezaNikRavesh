@@ -1,32 +1,30 @@
-
 a {
   text-decoration: none;
 }
 .container {
-  display: flex;
   width: 100%;
   background-color: rgb(175, 0, 0);
-  height: 70px;
+  min-height: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
-  justify-content: space-between;
 }
 .logo {
+  white-space: nowrap;
   width: 20%;
-  margin-left: 60px;
-}
-.logo h1 {
   color: white;
   cursor: context-menu;
+  position: relative;
+  right: 100px;
 }
-
 nav {
-  text-align: center;
-  width: 50%;
+  width: fit-content;
 }
 nav li {
   margin-left: 30px;
   list-style-type: none;
-  display: inline-block;
+  /* display: inline-block; */
 }
 li a {
   color: white;

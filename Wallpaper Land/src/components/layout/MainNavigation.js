@@ -5,9 +5,7 @@ function MainNavigation() {
   return (
     <header>
       <div className={styles.container}>
-        <div className={styles.logo}>
-          <h1>Wallpaper Land</h1>
-        </div>
+        <h1 className={styles.logo}>Wallpaper Land</h1>
         <nav>
           <ul>
             <li>
