@@ -1,0 +1,9 @@
+.container {
+  width: 65%;
+  margin: 100px auto;
+  text-align: center;
+}
+i {
+  font-size: 250px;
+  color: #cfcfcf;
+}

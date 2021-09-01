@@ -24,6 +24,13 @@ function BelowBox({ title, imageSrc, saved, saveItem }) {
     saveItem(true);
   }
   function remove() {
+    let temp = JSON.parse(localStorage.getItem("DATA"));
+    for (const item of temp) {
+      if (item.title === title) {
+        item.favorite = false;
+      }
+    }
+    localStorage.setItem("DATA", JSON.stringify(temp));
     saveItem(false);
   }
   return (
