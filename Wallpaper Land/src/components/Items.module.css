@@ -40,16 +40,6 @@ img {
   left: 20px;
   font-family: "Poppins", sans-serif;
 }
-box-icon[name="download"] {
-  cursor: pointer;
-  position: absolute;
-  right: 20px;
-}
-box-icon[name="bookmark"] {
-  cursor: pointer;
-  position: absolute;
-  right: 50px;
-}
 .content:hover .tools {
   display: block;
 }

@@ -1,7 +1,7 @@
 import styles from "./Items.module.css";
 import BackDrop from "./BackDrop";
 import { useState } from "react";
-import "boxicons";
+import BelowBox from "./BelowBox";
 function Item({
   src,
   title,
@@ -15,17 +15,15 @@ function Item({
 }) {
   function showBackDrop() {
     toggleBackDrop(true);
-    currentItem(src)
+    currentItem(src);
   }
   return (
     <li>
       <div className={styles.container}>
         <div className={styles.content}>
-          <img alt='network error' onClick={showBackDrop} src={preview}></img>
+          <img alt="network error" onClick={showBackDrop} src={preview}></img>
           <div className={styles.tools}>
-            <h3 className={styles.title}>{title}</h3>
-            <box-icon name="download" color="#ffffff"></box-icon>
-            <box-icon name="bookmark" color="#ffffff"></box-icon>
+            <BelowBox title={title} />
           </div>
         </div>
       </div>
