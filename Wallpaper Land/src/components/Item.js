@@ -1,6 +1,6 @@
 import styles from "./Items.module.css";
 import BackDrop from "./BackDrop";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BelowBox from "./BelowBox";
 function Item({
   src,
@@ -13,6 +13,7 @@ function Item({
   toggleBackDrop,
   currentItem,
 }) {
+  const [saved, setSaved] = useState(favorite);
   function showBackDrop() {
     toggleBackDrop(true);
     currentItem(src);
@@ -23,7 +24,12 @@ function Item({
         <div className={styles.content}>
           <img alt="network error" onClick={showBackDrop} src={preview}></img>
           <div className={styles.tools}>
-            <BelowBox title={title} />
+            <BelowBox
+              title={title}
+              imageSrc={src}
+              saved={saved}
+              saveItem={setSaved}
+            />
           </div>
         </div>
       </div>
