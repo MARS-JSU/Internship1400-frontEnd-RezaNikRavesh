@@ -1,6 +1,5 @@
 .container {
   position: relative;
   min-height: 100vh;
-  border: 2px solid red;
   padding-bottom: 60px;
 }
