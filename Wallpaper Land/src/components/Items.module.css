@@ -43,3 +43,8 @@ img {
 .content:hover .tools {
   display: block;
 }
+@media only screen and (max-width: 450px) {
+  .tools {
+    display: block;
+  }
+}

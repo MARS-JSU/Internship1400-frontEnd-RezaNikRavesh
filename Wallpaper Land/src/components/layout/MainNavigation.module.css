@@ -33,3 +33,24 @@ li a {
 li a:hover {
   color: #d1cfcf;
 }
+@media only screen and (max-width: 450px) {
+  .container {
+    text-align: center;
+
+    display: block;
+  }
+  .logo {
+    text-align: center;
+    display: block;
+    width: 100%;
+    position: static;
+  }
+  nav {
+    text-align: center;
+    margin: 10px auto;
+  }
+  nav li {
+    display: block;
+    margin: 0px;
+  }
+}

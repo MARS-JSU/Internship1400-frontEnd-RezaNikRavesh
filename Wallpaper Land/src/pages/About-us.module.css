@@ -1,6 +1,4 @@
-* {
-}
-.contaienr {
+.container {
   padding: 20px;
   width: 35%;
   background-color: rgba(38, 226, 21, 0.39);
@@ -9,8 +7,11 @@
   border: 2px solid green;
 }
 .content {
-
-  text-indent: 10px;
   color: rgb(66, 66, 66);
   cursor: context-menu;
+}
+@media only screen and (max-width: 450px) {
+  .container {
+    width: 80%;
+  }
 }

@@ -1,10 +1,7 @@
 import classes from "./About-us.module.css";
 function AboutUs() {
   return (
-    // <div>
-    //   <h1>AboutUs</h1>
-    // </div>
-    <div className={classes.contaienr}>
+    <div className={classes.container}>
       <p className={classes.content}>
         This is a simple background downloader app made by reactjs.
         <br />

@@ -1,4 +1,6 @@
 .container {
+  display: flex;
+  justify-content: space-between;
 }
 .title {
   color: white;
@@ -7,6 +9,9 @@
   position: relative;
   left: 20px;
   font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 box-icon[name="download"] {
   cursor: pointer;
